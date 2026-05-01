@@ -37,6 +37,12 @@ app.post('/api/tasks', (req, res) => {
       error: 'Title must be at least 3 characters'
     });
   }
-  
-  // Create task...
-});
+Contact
+Method	Contact
+Email	jusspound@gmail.com
+WhatsApp	+4915214108652
+Schedule	calendly.com/ousmanstore00/30min
+For production development, please contact directly.
+
+
+
