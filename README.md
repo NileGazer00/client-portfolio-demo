@@ -1,145 +1,42 @@
-﻿# Task Manager API - Professional Demo
+# Task Manager API
 
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-green.svg)](https://nodejs.org/)
-[![Express](https://img.shields.io/badge/Express-4.x-lightgrey.svg)](https://expressjs.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-20.x-2ea44f)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.x-lightgrey)](https://expressjs.com/)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ## Overview
 
-Production-style REST API demonstrating my coding standards and professional practices.
+Production-ready REST API demonstrating my coding standards.
 
-**Inquire:** jusspound@gmail.com | WhatsApp: +4915214108652
+**Live Demo:** Available upon request
 
 ---
 
-## API Endpoints (Working Code)
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/health` | API status check |
-| GET | `/api/tasks` | Get all tasks |
+| GET | `/health` | Status check |
+| GET | `/api/tasks` | List all tasks |
 | GET | `/api/tasks/:id` | Get single task |
-| POST | `/api/tasks` | Create a task |
-| PUT | `/api/tasks/:id` | Update a task |
-| DELETE | `/api/tasks/:id` | Delete a task |
+| POST | `/api/tasks` | Create task |
+| PUT | `/api/tasks/:id` | Update task |
+| DELETE | `/api/tasks/:id` | Delete task |
 
 ---
 
 ## Code Quality Sample
 
 ```javascript
-// Example from server.js - Error handling pattern
+// Input validation pattern
 app.post('/api/tasks', (req, res) => {
-  const { title, description } = req.body;
+  const { title } = req.body;
   
   if (!title || title.trim().length < 3) {
     return res.status(400).json({
-      success: false,
       error: 'Title must be at least 3 characters'
     });
   }
-Contact for Production Work
-Method	Contact
-Email	jusspound@gmail.com
-WhatsApp	+4915214108652
-Schedule	calendly.com/ousmanstore00/30min
-This is a demonstration. Custom development available starting at $400.
-
----
-
-## ✅ Final Corrected `server.js` (Complete Working Code)
-
-**Go to:** `https://github.com/NileGazer00/client-portfolio-demo/blob/main/server.js`
-
-Click **pencil icon**, **delete everything**, paste this:
-
-```javascript
-// Professional Portfolio Demo - Task Manager API
-// Contact: jusspound@gmail.com | WhatsApp: +4915214108652
-// Schedule: https://calendly.com/ousmanstore00/30min
-
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-let tasks = [];
-let nextId = 1;
-
-// Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', contact: 'jusspound@gmail.com' });
-});
-
-// Get all tasks
-app.get('/api/tasks', (req, res) => {
-  res.json({ success: true, data: tasks });
-});
-
-// Get single task
-app.get('/api/tasks/:id', (req, res) => {
-  const task = tasks.find(t => t.id === parseInt(req.params.id));
-  if (!task) return res.status(404).json({ error: 'Task not found' });
-  res.json({ success: true, data: task });
-});
-
-// Create task
-app.post('/api/tasks', (req, res) => {
-  const { title, description } = req.body;
   
-  if (!title || title.trim().length < 3) {
-    return res.status(400).json({ error: 'Title must be at least 3 characters' });
-  }
-  
-  const task = {
-    id: nextId++,
-    title: title.trim(),
-    description: description || '',
-    completed: false,
-    createdAt: new Date().toISOString()
-  };
-  
-  tasks.push(task);
-  res.status(201).json({ success: true, data: task });
-});
-
-// Update task
-app.put('/api/tasks/:id', (req, res) => {
-  const task = tasks.find(t => t.id === parseInt(req.params.id));
-  if (!task) return res.status(404).json({ error: 'Task not found' });
-  
-  if (req.body.title) task.title = req.body.title.trim();
-  if (req.body.description) task.description = req.body.description;
-  if (req.body.completed !== undefined) task.completed = req.body.completed;
-  
-  res.json({ success: true, data: task });
-});
-
-// Delete task
-app.delete('/api/tasks/:id', (req, res) => {
-  const index = tasks.findIndex(t => t.id === parseInt(req.params.id));
-  if (index === -1) return res.status(404).json({ error: 'Task not found' });
-  
-  tasks.splice(index, 1);
-  res.json({ success: true, message: 'Task deleted' });
-});
-
-app.listen(PORT, () => {
-  console.log(`\n API running on port ${PORT}`);
-  console.log(` Contact: jusspound@gmail.com`);
-  console.log(` Book: https://calendly.com/ousmanstore00/30min\n`);
-});
-## 💰 Hire Me (Instant Payment)
-
-| Service | Price | Buy Now |
-|---------|-------|---------|
-| 🔍 Code Audit & Optimization | $300 | [Pay Now](https://buymeacoffee.com/nilegazer00) |
-| 🐛 Bug Fix / Feature Addition | $500 | [Pay Now](https://buymeacoffee.com/nilegazer00) |
-| 🤖 Custom Automation Script | $400 | [Pay Now](https://buymeacoffee.com/nilegazer00) |
-| 🔗 API Development | $1,500 | [Email for invoice](mailto:jusspound@gmail.com) |
-| 🌐 Full Web Application | $3,000 | [Email for invoice](mailto:jusspound@gmail.com) |
-
-**Or book a free 30-min call:** [calendly.com/ousmanstore00/30min](https://calendly.com/ousmanstore00/30min)
-  
-  // ... create task
+  // Create task...
 });
