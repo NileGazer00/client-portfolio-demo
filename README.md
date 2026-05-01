@@ -129,6 +129,17 @@ app.listen(PORT, () => {
   console.log(` Contact: jusspound@gmail.com`);
   console.log(` Book: https://calendly.com/ousmanstore00/30min\n`);
 });
+## 💰 Hire Me (Instant Payment)
+
+| Service | Price | Buy Now |
+|---------|-------|---------|
+| 🔍 Code Audit & Optimization | $300 | [Pay Now](https://buymeacoffee.com/nilegazer00) |
+| 🐛 Bug Fix / Feature Addition | $500 | [Pay Now](https://buymeacoffee.com/nilegazer00) |
+| 🤖 Custom Automation Script | $400 | [Pay Now](https://buymeacoffee.com/nilegazer00) |
+| 🔗 API Development | $1,500 | [Email for invoice](mailto:jusspound@gmail.com) |
+| 🌐 Full Web Application | $3,000 | [Email for invoice](mailto:jusspound@gmail.com) |
+
+**Or book a free 30-min call:** [calendly.com/ousmanstore00/30min](https://calendly.com/ousmanstore00/30min)
   
   // ... create task
 });
